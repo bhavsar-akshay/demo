@@ -1,0 +1,201 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/style.scss"> -->
+
+    <script src="./js/script.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a routerLink="/" class="navbar-brand">Company(Logo)</a>
+                    </div>
+
+                    <div class=" navbar-collapse" style="float: right;">
+                        <ul class="nav navbar-nav" *ngIf="isAuthenticated">
+                            <li routerLinkActive="active"><a routerLink="/recipes">About</a></li>
+                            <li routerLinkActive="active"><a routerLink="/products">Products</a></li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/shopping-list">Downloads</a>
+                            </li>
+                            <li routerLinkActive="active"><a routerLink="/products">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row" style="min-height: 500px; padding:5%">
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="./Assets/1.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="./Assets/2.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="./Assets/3.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+
+            <!-- <div class="about-us-conatiner">
+                <p>
+                    ToyFight is an award-winning creative design agency. You’ll find the About Page at the top of the menu under the Who section. This page has a unique feel, thanks to the deconstructed action figures representing the founders, Leigh Whipday and Jonny Lander.
+                </p>
+                <p>
+                    The great attention to detail and interactivity also reflect the company’s 16 years of experience.
+                </p>
+            </div> -->
+        </div>
+        <div class="nav-footer">
+            <footer class="page-footer font-small blue pt-4">
+
+                <!-- Footer Links -->
+                <div class="container-fluid text-center text-md-left">
+
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+
+                            <!-- Links -->
+                            <strong class="text-uppercase">About</strong>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a>Contact Us</a>
+                                </li>
+                                <li>
+                                    <a>About Us</a>
+                                </li>
+                                <li>
+                                    <a>Career</a>
+                                </li>
+                                <li>
+                                    <a>Press Relese</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+
+                            <!-- Links -->
+                            <strong class="text-uppercase">HELP</strong>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a>Payments</a>
+                                </li>
+                                <li>
+                                    <a>Shipping</a>
+                                </li>
+                                <li>
+                                    <a>Cancellation & Returns</a>
+                                </li>
+                                <li>
+                                    <a>FAQ</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <strong class="text-uppercase">Mail Us:</strong><br/> akshu28bhavsar@gmail.com
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <strong class="text-uppercase">Registered Office Address:
+                            </strong><br /> 25, Sarawati Colony, Shirpur, Dist-Dhule, 425405
+                            <br> Telephone: <a style="color: #337ab7;">+91 9975744477</a>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3" style="margin-top: 15px;">
+                    © 2020 Copyright: Akshay Bhavsar
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+        </div>
+    </div>
+</body>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
+</html>
